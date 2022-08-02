@@ -10,7 +10,7 @@ export class ContactForm extends Component {
     }
 
     handleChange = event => {
-        const { name, value } = event.currentTarget;
+        const { name, value } = event.target;
         this.setState({ [name]: value });
     };
 
@@ -24,7 +24,6 @@ export class ContactForm extends Component {
         this.setState({name: '', number: ''})
     }
     render() {
-
         return (
             <form className={css.form} onSubmit={this.handleSubmit}>
                 <label className={css.label}>
@@ -53,7 +52,9 @@ export class ContactForm extends Component {
                         onChange={this.handleChange}
                     />
                     </label>
-                <button className={css.button} type='submit'>Add contact</button>
+                <button className={css.button} type='submit'>
+                    Add contact
+                </button>
             </form>
         )
     }
